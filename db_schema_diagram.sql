@@ -1,5 +1,6 @@
 CREATE DATABASE clinic;
 
+-- invoices table
 CREATE TABLE invoices (
     id SERIAL PRIMARY KEY,
     total_amount DECIMAL,
@@ -7,7 +8,7 @@ CREATE TABLE invoices (
     paid_at TIMESTAMP,
     medical_history_id INTEGER
 );
-
+-- invoice-items table
 CREATE TABLE invoice_items (
     id SERIAL PRIMARY KEY,
     unit_price DECIMAL,
@@ -16,3 +17,10 @@ CREATE TABLE invoice_items (
     invoice_id INTEGER,
     treatment_id INTEGER
 );
+-- foreign keys
+ALTER TABLE invoice_items
+    ADD CONSTRAINT fk_invoices
+    FOREIGN KEY (invoice_id) REFERENCES invoices(id);
+    
+-- invoice index keys 
+CREATE INDEX idx_invoice_items_invoice_id ON invoice_items(invoice_id);
