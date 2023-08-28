@@ -1,6 +1,6 @@
 CREATE DATABASE clinic;
 
-CREATE TABLE treaments (
+CREATE TABLE treatments (
     id SERIAL PRIMARY KEY,
     type VARCHAR(255),
     NAME VARCHAR(255)
