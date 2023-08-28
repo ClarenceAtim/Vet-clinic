@@ -119,7 +119,8 @@ JOIN specializations sp ON vt.id = sp.vet_id AND a.species_id = sp.species_id JO
 WHERE ms.id = vt.id GROUP BY s.name ORDER BY animal_count DESC LIMIT 1;
 
 -- analyze speed
-explain analyze SELECT COUNT(*) FROM visits where animal_id = 4
+explain analyze SELECT COUNT(*) FROM visits where animal_id = 4;
+SELECT COUNT(*) FROM visits where animal_id = 4;
 SELECT * FROM visits where vet_id = 2;
 SELECT * FROM owners where email = 'owner_18327@mail.com';
 
