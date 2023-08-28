@@ -1,5 +1,10 @@
 CREATE DATABASE clinic;
 
+CREATE TABLE treaments (
+    id SERIAL PRIMARY KEY,
+    type VARCHAR(255),
+    NAME VARCHAR(255)
+);
 -- invoices table
 CREATE TABLE invoices (
     id SERIAL PRIMARY KEY,
@@ -22,5 +27,9 @@ ALTER TABLE invoice_items
     ADD CONSTRAINT fk_invoices
     FOREIGN KEY (invoice_id) REFERENCES invoices(id);
     
+ALTER TABLE invoice_items
+    ADD CONSTRAINT fk_treatments
+    FOREIGN KEY (treatment_id) REFERENCES treatments(id);
+
 -- invoice index keys 
 CREATE INDEX idx_invoice_items_invoice_id ON invoice_items(invoice_id);
