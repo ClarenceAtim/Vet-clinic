@@ -61,6 +61,9 @@ ALTER TABLE medical_histories_treatments
     ADD CONSTRAINT fk_treatments
     FOREIGN KEY (treatment_id) REFERENCES treatments(id);
 
+ALTER TABLE medical_histories
+ADD CONSTRAINT fk_patients
+FOREIGN KEY (patient_id) REFERENCES patients(id) ON DELETE CASCADE;
 
 -- Create indexes for foreign keys
 CREATE INDEX idx_medical_histories_treatments_medical_history_id ON medical_histories_treatments(medical_history_id);
