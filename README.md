@@ -47,7 +47,7 @@
 
 > Database schema
 > Database queries
-> Data indexes and relationshipsbetween tables
+> Data indexes and relationships between tables
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

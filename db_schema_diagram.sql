@@ -41,8 +41,11 @@ ALTER TABLE invoice_items
 ALTER TABLE invoice_items
     ADD CONSTRAINT fk_treatments
     FOREIGN KEY (treatment_id) REFERENCES treatments(id);
-
+ALTER TABLE medical_histories
+ADD CONSTRAINT fk_patients
+FOREIGN KEY (patient_id) REFERENCES patients(id) ON DELETE CASCADE;
 -- invoice index keys 
 
 CREATE INDEX idx_invoice_items_invoice_id ON invoice_items(invoice_id);
 CREATE INDEX idx_invoice_items_treatment_id ON invoice_items(treatment_id);
+CREATE INDEX idx_medical_histories_patient_id ON medical_histories(patient_id);
