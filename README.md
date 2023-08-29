@@ -45,7 +45,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Database
+> Database schema
+> Database queries
+> Data indexes and relationships between tables
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,6 +72,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 - GitHub: [@kit0-0](https://github.com/ClarenceAtim)
 
+👤 **RileyManda**
+
+- GitHub: [@RileyManda](https://github.com/RileyManda)
+- Twitter: [@rilecodez](https://twitter.com/rileycodez)
+- LinkedIn: [rileymanda](https://www.linkedin.com/in/rileymanda/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,6 +86,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **Add Account System**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
