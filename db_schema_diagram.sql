@@ -44,8 +44,27 @@ ALTER TABLE invoice_items
 ALTER TABLE medical_histories
 ADD CONSTRAINT fk_patients
 FOREIGN KEY (patient_id) REFERENCES patients(id) ON DELETE CASCADE;
--- invoice index keys 
 
+-- Create the join table for many-to-many relationship
+CREATE TABLE medical_histories_treatments (
+    id SERIAL PRIMARY KEY,
+    medical_history_id INTEGER,
+    treatment_id INTEGER
+);
+
+-- Add foreign key constraints
+ALTER TABLE medical_histories_treatments
+    ADD CONSTRAINT fk_medical_histories
+    FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id);
+
+ALTER TABLE medical_histories_treatments
+    ADD CONSTRAINT fk_treatments
+    FOREIGN KEY (treatment_id) REFERENCES treatments(id);
+
+
+-- Create indexes for foreign keys
+CREATE INDEX idx_medical_histories_treatments_medical_history_id ON medical_histories_treatments(medical_history_id);
+CREATE INDEX idx_medical_histories_treatments_treatment_id ON medical_histories_treatments(treatment_id);
 CREATE INDEX idx_invoice_items_invoice_id ON invoice_items(invoice_id);
 CREATE INDEX idx_invoice_items_treatment_id ON invoice_items(treatment_id);
 CREATE INDEX idx_medical_histories_patient_id ON medical_histories(patient_id);
